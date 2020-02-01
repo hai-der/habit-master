@@ -1,0 +1,8 @@
+.habit {
+  display: flex;
+  margin: 20px;
+}
+
+.title {
+  width: 100px;
+}
