@@ -7,7 +7,7 @@ import './checkbox.style.css';
 const CHECKBOX_STATES = {
   DEFAULT: '',
   SUCCESS: 'success',
-  FAILURE: 'fail',
+  FAILURE: 'failure',
   OTHER: 'other'
 };
 
@@ -29,16 +29,21 @@ function CheckBox() {
   }
 
   function renderCheckbox() {
+    let logo, alt;
     switch (progress) {
       case CHECKBOX_STATES.DEFAULT:
         return '';
       case CHECKBOX_STATES.SUCCESS:
-        return <img src={checkmark} alt='success'></img>;
+        [logo, alt] = [checkmark, 'success'];
+        break;
       case CHECKBOX_STATES.FAILURE:
-        return <img src={cross} alt='failure'></img>;
+        [logo, alt] = [cross, 'failure'];
+        break;
       case CHECKBOX_STATES.OTHER:
-        return <img src={other} alt='other'></img>;
+        [logo, alt] = [other, 'other'];
+        break;
     }
+    return <img src={logo} alt={alt} />;
   }
 
   return (
