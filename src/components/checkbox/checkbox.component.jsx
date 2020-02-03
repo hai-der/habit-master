@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import checkmark from './checkmark_logo.jpg';
-import cross from './cross_logo.jpg';
-import other from './error_logo.jpg';
-import './checkbox.style.css';
+import { ReactComponent as CheckMark } from '../../assets/checkbox_correct.svg';
+import { ReactComponent as CrossMark } from '../../assets/checkbox_cross.svg';
+import { ReactComponent as ExclamationMark } from '../../assets/checkbox_error.svg';
+import './checkbox.style.scss';
 
 const CHECKBOX_STATES = {
   DEFAULT: '',
@@ -29,21 +29,16 @@ function CheckBox() {
   }
 
   function renderCheckbox() {
-    let logo, alt;
     switch (progress) {
       case CHECKBOX_STATES.DEFAULT:
         return '';
       case CHECKBOX_STATES.SUCCESS:
-        [logo, alt] = [checkmark, 'success'];
-        break;
+        return <CheckMark />;
       case CHECKBOX_STATES.FAILURE:
-        [logo, alt] = [cross, 'failure'];
-        break;
+        return <CrossMark />;
       case CHECKBOX_STATES.OTHER:
-        [logo, alt] = [other, 'other'];
-        break;
+        return <ExclamationMark />;
     }
-    return <img src={logo} alt={alt} />;
   }
 
   return (

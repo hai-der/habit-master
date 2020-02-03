@@ -1,6 +1,6 @@
 import React from 'react';
 import CheckBox from '../checkbox/checkbox.component';
-import './habit-style.css';
+import './habit-style.scss';
 
 const Habit = props => (
   <div className='habit'>
