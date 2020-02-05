@@ -1,6 +1,9 @@
-.App {
-  text-align: center;
-  border: solid 4px black;
-  padding: 50px;
-  margin: 50px;
+body {
+  font-family: 'Open Sans';
+  padding: 20px 60px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
